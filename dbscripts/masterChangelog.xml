@@ -8,7 +8,9 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
 
-    <changeSet id="Create BREEDS table" author="Hemant">
+        <include file="test_changelog.sql"/>
+
+    <!--<changeSet id="Create BREEDS table" author="Hemant">
         <createTable tableName="BREEDS">
             <column name="BRE_ID" type="int" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="PK_BREEDS" />
@@ -19,7 +21,7 @@
         </createTable>
     </changeSet>
 
-    <!--<changeSet id="List of BREEDS" author="Hemant">
+    <changeSet id="List of BREEDS" author="Hemant">
         <insert tableName="BREEDS">
             <column name="BRE_NAME" value="Golden Retriever" />
         </insert>

@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS customer
 (
-    id bigint NOT NULL DEFAULT nextval('customer_id_seq'::regclass),
-    firstname character varying(255) COLLATE pg_catalog."default",
-    lastname character varying(255) COLLATE pg_catalog."default",
+    id int,
+    firstname character(255),
+    lastname character(255),
     CONSTRAINT customer_pkey PRIMARY KEY (id)
 )

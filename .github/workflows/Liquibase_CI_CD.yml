@@ -23,10 +23,10 @@ jobs:
       - name: Run 'Liquibase status' in a Docker container
         uses: docker://liquibase/liquibase:latest
         with:
-          args: --url=jdbc:postgresql://host:5432/postgresqlftsdb --changeLogFile=/dbscripts/masterChangelog.xml --username= --password= --driver=org.postgresql.Driver --defaultSchemaName=public status
+          args: --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=/dbscripts/masterChangelog.xml --username=admin --password=password status
 
       # Runs a set of commands using the runners shell
       - name: Run 'Liquibase update' in a Docker container
         uses: docker://liquibase/liquibase:latest
         with:
-          args: --url=jdbc:postgresql://host:5432/postgresqlftsdb --changeLogFile=/dbscripts/masterChangelog.xml --username= --password= --driver=org.postgresql.Driver --defaultSchemaName=public --logLevel=debug update
+          args: --url=""jdbc:h2:mem:liquibase_dev" --changeLogFile=/dbscripts/masterChangelog.xml --username=admin --password=password --logLevel=debug update

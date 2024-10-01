@@ -29,4 +29,4 @@ jobs:
       - name: Run 'Liquibase update' in a Docker container
         uses: docker://liquibase/liquibase:latest
         with:
-          args: --driver=org.h2.Driver --url=""jdbc:h2:mem:liquibase_dev" --changeLogFile=/dbscripts/masterChangelog.xml --username=admin --password=password --logLevel=debug update
+          args: --driver=org.h2.Driver --url="jdbc:h2:mem:liquibase_dev" --changeLogFile=/dbscripts/masterChangelog.xml --username=admin --password=password --logLevel=debug update

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS public.customer
+CREATE TABLE IF NOT EXISTS customer
 (
     id bigint NOT NULL DEFAULT nextval('customer_id_seq'::regclass),
     firstname character varying(255) COLLATE pg_catalog."default",

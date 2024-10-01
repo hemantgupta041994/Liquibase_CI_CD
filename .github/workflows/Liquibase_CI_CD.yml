@@ -23,10 +23,10 @@ jobs:
       - name: Run 'Liquibase status' in a Docker container
         uses: docker://liquibase/liquibase:latest
         with:
-          args: --url=fts-eastus2-dev-db-pls-01.azprv.3pc.att.com --changeLogFile=/dbscripts/masterChangelog.xml --username=ftsappowner --password=MakeItAmazing# --driver=org.postgresql.Driver --defaultSchemaName=postgresqlftsdb status
+          args: --url=jdbc:postgresql://fts-eastus2-dev-db-pls-01.azprv.3pc.att.com:5432/postgresqlftsdb --changeLogFile=/dbscripts/masterChangelog.xml --username=ftsappowner --password=MakeItAmazing# --defaultSchemaName=public status
 
       # Runs a set of commands using the runners shell
       - name: Run 'Liquibase update' in a Docker container
         uses: docker://liquibase/liquibase:latest
         with:
-          args: --url=fts-eastus2-dev-db-pls-01.azprv.3pc.att.com --changeLogFile=/dbscripts/masterChangelog.xml --username=ftsappowner --password=MakeItAmazing# --driver=org.postgresql.Driver --defaultSchemaName=postgresqlftsdb --logLevel=debug update
+          args: --url=jdbc:postgresql://fts-eastus2-dev-db-pls-01.azprv.3pc.att.com:5432/postgresqlftsdb --changeLogFile=/dbscripts/masterChangelog.xml --username=ftsappowner --password=MakeItAmazing# --defaultSchemaName=public --logLevel=debug update

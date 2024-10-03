@@ -25,6 +25,8 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
+      - name: Set JAVA_HOME
+        run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
       - name: Run 'Liquibase status' in a Docker container
         uses: docker://liquibase/liquibase:latest
         with:
